@@ -2,7 +2,7 @@ import "@rainbow-me/rainbowkit/styles.css";
 import { Providers } from "./providers";
 
 export const metadata = {
-  title: "Tableland Starter",
+  title: "Arbitratian",
   description: "A Tableland + Next.js + wagmi + RainbowKit starter template",
 };
 
