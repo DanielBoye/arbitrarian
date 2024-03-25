@@ -10,22 +10,18 @@ const chains = [
   chain.optimism,
   chain.arbitrum,
   chain.filecoin,
-  ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true"
-    ? [
-        chain.arbitrumSepolia,
-        chain.sepolia,
-        chain.polygonMumbai,
-        chain.optimismSepolia,
-        chain.filecoinCalibration,
-        chain.hardhat,
-      ]
-    : []),
+  chain.arbitrumSepolia,
+  chain.sepolia,
+  chain.polygonMumbai,
+  chain.optimismSepolia,
+  chain.filecoinCalibration,
+  chain.hardhat,
 ];
 
 const transports = Object.fromEntries(chains.map((c) => [c.id, http()]));
 
 export const config = getDefaultConfig({
-  appName: "Tableland Starter",
+  appName: "Arbitrarian",
   chains,
   transports,
   projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID ?? "", // Set up a WalletConnect account: https://walletconnect.com/
