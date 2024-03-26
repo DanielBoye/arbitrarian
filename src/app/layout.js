@@ -1,16 +1,15 @@
-import "@rainbow-me/rainbowkit/styles.css";
-import { Providers } from "./providers";
+import Home from "./page";
 
 export const metadata = {
-  title: "Arbitratian",
-  description: "A Tableland + Next.js + wagmi + RainbowKit starter template",
-};
+    title: "Arbitrarium",
+    description: "A Tableland + Next.js + wagmi + RainbowKit Project for LearnWEB3 Hackathon",
+  };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        {children}
       </body>
     </html>
   );
