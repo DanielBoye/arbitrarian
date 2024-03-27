@@ -5,7 +5,7 @@ import Quiz from '@/components/Quiz';
 
 const QuizPage = () => {
   return (
-    <div className="bg-black min-h-screen text-white p-5">
+    <div className="min-h-screen text-white p-5">
       <Quiz />
     </div>
   );
