@@ -1,9 +1,12 @@
+"use client";
+
+// pages/profile.js
+import ShowProfile from '@/components/ShowProfile';
+
 export default function Profile() {
-    return (
-        <>
-            <div>
-                <h1 className="text-slate-50">Profile Page</h1>
-            </div>
-        </>
-    );
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-black">
+      <ShowProfile />
+    </div>
+  );
 }
