@@ -3,23 +3,10 @@ import { getDefaultConfig } from "@rainbow-me/rainbowkit";
 import * as chain from "wagmi/chains";
 import { http } from "viem";
 
-// All of the chains configured below are supported by Tableland
+// Only sepolia -> will be only arbitrumSepolia when that works out
 const chains = [
-  chain.mainnet,
-  chain.polygon,
-  chain.optimism,
-  chain.arbitrum,
-  chain.filecoin,
-  ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true"
-    ? [
-        chain.arbitrumSepolia,
-        chain.sepolia,
-        chain.polygonMumbai,
-        chain.optimismSepolia,
-        chain.filecoinCalibration,
-        chain.hardhat,
-      ]
-    : []),
+  chain.sepolia,  
+  chain.arbitrumSepolia,
 ];
 
 const transports = Object.fromEntries(chains.map((c) => [c.id, http()]));
