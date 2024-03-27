@@ -1,4 +1,5 @@
 import Home from "./page";
+import Providers from "./providers";
 
 export const metadata = {
     title: "Arbitrarium",
@@ -9,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-slate-950">
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

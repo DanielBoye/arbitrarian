@@ -10,12 +10,16 @@ const chains = [
   chain.optimism,
   chain.arbitrum,
   chain.filecoin,
-  chain.arbitrumSepolia,
-  chain.sepolia,
-  chain.polygonMumbai,
-  chain.optimismSepolia,
-  chain.filecoinCalibration,
-  chain.hardhat,
+  ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true"
+    ? [
+        chain.arbitrumSepolia,
+        chain.sepolia,
+        chain.polygonMumbai,
+        chain.optimismSepolia,
+        chain.filecoinCalibration,
+        chain.hardhat,
+      ]
+    : []),
 ];
 
 const transports = Object.fromEntries(chains.map((c) => [c.id, http()]));
