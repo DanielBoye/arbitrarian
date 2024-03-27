@@ -4,7 +4,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export default function Home() {
   return (
-    <>
+    <div className="bg-black min-h-screen text-white">
       <nav className="flex">
         <h1 className="text-slate-50 grow font-bold text-4xl">Arbitrarium</h1>
         <Link
@@ -22,6 +22,6 @@ export default function Home() {
         <ConnectButton />
       </nav>
       <main></main>
-    </>
+    </div>
   );
 }
