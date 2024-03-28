@@ -2,7 +2,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Tableland } from "@/components/Tableland";
 import Image from "next/image";
 
-export default function Tableland() {
+export default function TablelandPage() {
   return (
     <>
       <nav className="sticky top-0 flex items-center justify-between flex-wrap bg-lightgreen opacity-100 shadow p-2 mb-8">
