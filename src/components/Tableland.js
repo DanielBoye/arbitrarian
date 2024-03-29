@@ -21,8 +21,10 @@ export function Tableland() {
   // Create a table with hardcoded prefix and schema
   async function create() {
     try {
+      console.log(signer);
       const db = new Database({ signer });
       // Example table schema with an `id` and `val` column
+      console.log(db)
       const schema = `id integer primary key, val text`;
       const { meta: create } = await db
         .prepare(`CREATE TABLE "${prefix}" (${schema});`)

@@ -1,6 +1,7 @@
 import "./globals.css";
 import Link from "next/link";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { Tableland } from "@/components/tableland"
 
 export default function Home() {
   return (
@@ -21,7 +22,9 @@ export default function Home() {
         </Link>
         <ConnectButton />
       </nav>
-      <main></main>
+      <main>
+        <Tableland />
+      </main>
     </div>
   );
 }
