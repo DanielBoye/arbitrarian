@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const RootHeader = () => {
     return (
-        <nav className="flex">
+        <nav className="flex m-4">
             <Link href={"/"} className="grow">
-                <h1 className="text-slate-50 font-bold text-4xl">
+                <h1 className="text-slate-50 font-bold text-5xl">
                     Arbitrarium
                 </h1>
             </Link>
