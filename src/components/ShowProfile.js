@@ -1,6 +1,5 @@
 "use client";
 
-
 import { useAccount } from 'wagmi';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 
