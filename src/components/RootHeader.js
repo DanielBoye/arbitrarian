@@ -1,27 +1,23 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Link from "next/link";
+import { SignInIcon } from "./icons/signIn";
 
 const RootHeader = () => {
     return (
-        <nav className="flex m-4">
+        <nav className="flex m-4 items-center">
             <Link href={"/"} className="grow">
-                <h1 className="text-slate-50 font-bold text-5xl">
+                <h1 className="text-primary font-bold text-5xl">
                     Arbitrarium
                 </h1>
             </Link>
             <Link
-                href={"/profile"}
-                className="flex-none grow-0 mr-4 border-4 text-slate-50 border-slate-700 border-collapse rounded"
+                href={"#"}
+                className="grow-0 bg-primary text-primary-content rounded flex items-center justify-center"
             >
-                Profile
+                <span className="mr-2"><SignInIcon /></span>
+                <span className="text-lg font-semibold mr-2">Sign in</span>
             </Link>
-            <Link
-                href={"/quiz"}
-                className="flex-none grow-0 border-4 text-slate-50 border-slate-700 border-collapse rounded"
-            >
-                Quiz
-            </Link>
-            <ConnectButton />
+            {/* <ConnectButton /> */}
         </nav>
     );
 };

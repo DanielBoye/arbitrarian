@@ -1,6 +1,6 @@
 import Providers from "./providers";
 import "./globals.css";
-import RootHeader from "@/components/RootHeader";
+import RootHeader from "@/components/rootHeader";
 
 export const metadata = {
     title: "Arbitrarium",
@@ -11,12 +11,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className="bg-black">
+            <body>
                 <Providers>
                     <header>
                         <RootHeader />
                     </header>
-                    <main>{children}</main>
+                    <main className="flex flex-col items-center h-full">
+                        {children}
+                    </main>
+                    <footer>
+                        Footer
+                    </footer>
                 </Providers>
             </body>
         </html>
