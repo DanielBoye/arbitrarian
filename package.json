@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@tableland/local": "^2.4.1",
+    "daisyui": "^4.9.0",
     "encoding": "^0.1.13",
     "eslint": "^8.43.0",
     "eslint-config-next": "^13.4.7",
