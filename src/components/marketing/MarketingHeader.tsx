@@ -29,7 +29,7 @@ export function MarketingHeader({
         </Link>
         {/* Update the Button onClick to use redirectToGoogle */}
         <Button icon={<SignInIcon />} onClick={redirectToGoogle}>
-          Sign in
+          Sign In
         </Button>
       </Container>
     </header>
