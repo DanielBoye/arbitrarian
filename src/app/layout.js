@@ -3,7 +3,7 @@ import "./globals.css";
 import RootHeader from "@/components/RootHeader";
 
 export const metadata = {
-    title: "Arbitrarium",
+    title: "Arbitrarian",
     description:
         "A Tableland + Next.js + wagmi + RainbowKit Project for LearnWEB3 Hackathon",
 };
@@ -13,15 +13,15 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body>
                 <Providers>
-                    <header>
-                        <RootHeader />
-                    </header>
-                    <main className="flex flex-col items-center h-full">
-                        {children}
-                    </main>
-                    <footer>
-                        Footer
-                    </footer>
+                        <header className="grow-0 shrink basis-auto">
+                            <RootHeader />
+                        </header>
+                        <main className="flex flex-col grow shrink basis-auto items-center">
+                            {children}
+                        </main>
+                        <footer className="grow-0 shrink basis-auto">
+                            Footer
+                        </footer>
                 </Providers>
             </body>
         </html>
