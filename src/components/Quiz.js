@@ -98,3 +98,10 @@ const QuizComponent = () => {
 };
 
 export default QuizComponent;
+
+// TODO
+
+// increment isCorrect if it is right, check with current length of quiz answers
+// loop around if quiz is wrong
+
+// sign transaction to sign your progress -> tableland
