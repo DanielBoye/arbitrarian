@@ -29,9 +29,9 @@ export default function Index() {
           </p>
         </div>
         <div className={styles.heroActions}>
-          <Button icon={<SignInIcon />} onClick={() => signIn()}>
+          {/* <Button icon={<SignInIcon />} onClick={() => signIn()}>
             Connect Wallet
-          </Button>
+          </Button> */}
           <LinkButton
             href="https://arbitrum.io/"
             target="_blank"
