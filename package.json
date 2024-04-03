@@ -4,7 +4,7 @@
   "description": "A JavaScript template for @tableland + NextJS + wagmi + RainbowKit projects",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm install && next build",
     "start": "next start",
     "up": "npm install && npm run build && npm run start",
     "lt": "npx local-tableland",
