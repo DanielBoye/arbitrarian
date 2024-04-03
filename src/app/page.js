@@ -1,10 +1,10 @@
-"use client"
 import clsx from "clsx";
 import { SignInIcon } from "@/components/icons/signIn";
 import { MarketingLayout } from "@/components/marketing/Marketing";
 import { Button, LinkButton } from "@/components/icons/Button/Button";
 import { Container } from "@/components/container/Container";
 import styles from "./index.module.css";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 function Feature({ title, description, className, ...props }) {
   return (
@@ -16,11 +16,6 @@ function Feature({ title, description, className, ...props }) {
 }
 
 export default function Index() {
-  // Directly define the redirection inside the onClick
-  function redirectToGoogle() {
-    window.location.href = 'https://google.com';
-  }
-
   return (
     <MarketingLayout>
       <Container className={styles.section}>
@@ -34,7 +29,7 @@ export default function Index() {
           </p>
         </div>
         <div className={styles.heroActions}>
-          <Button icon={<SignInIcon />} onClick={redirectToGoogle}>
+          <Button icon={<SignInIcon />} onClick={() => signIn()}>
             Connect Wallet
           </Button>
           <LinkButton
