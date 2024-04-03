@@ -13,7 +13,7 @@ export default function Providers({ children }) {
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider theme={darkTheme()}>
-          {children}
+          <div className="min-h-screen flex flex-col">{children}</div>
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
