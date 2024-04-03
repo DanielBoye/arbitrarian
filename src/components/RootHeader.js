@@ -7,7 +7,7 @@ const RootHeader = () => {
         <nav className="flex m-4 items-center">
             <Link href={"/"} className="grow">
                 <h1 className="text-primary font-bold text-5xl">
-                    Arbitrarium
+                    Arbitrarian
                 </h1>
             </Link>
             <Link
