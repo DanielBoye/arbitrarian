@@ -1,6 +1,6 @@
 import Providers from "./providers";
 import "./globals.css";
-import RootHeader from "@/components/rootHeader";
+import RootHeader from "@/components/RootHeader";
 
 export const metadata = {
     title: "Arbitrarium",
