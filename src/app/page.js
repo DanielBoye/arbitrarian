@@ -28,10 +28,10 @@ export default function Index() {
 
   return (
     <MarketingLayout>
-      <Container className={styles.section}>
+      <Container className={styles.sectionHeader}>
         <div className={styles.heroInfo}>
           <h1 className={styles.heroTitle}>
-            Learn, build and dev&nbsp;on Arbitrum
+            Arbitrarian
           </h1>
           <p className={styles.heroLead}>
             Learn how to develop and deploy tokens from smart contracts
@@ -51,7 +51,7 @@ export default function Index() {
           </LinkButton>
         </div>
       </Container>
-      {/* <Container className={styles.section}>
+      <Container className={styles.sectionFeature}>
         <h2 className={styles.sectionTitle}>Features</h2>
         <div className={styles.featuresGrid}>
           <Feature
@@ -72,15 +72,15 @@ export default function Index() {
             }
             title="Next.js"
           />
-          <Feature
+          {/* <Feature
             description={
               <>
                 Adjust our reusable interface & design system to fit your needs.
               </>
             }
             title="User Interface"
-          />
-          <Feature
+          /> */}
+          {/* <Feature
             description={
               <>
                 All custom client and server functions are fully typed, and easy
@@ -88,8 +88,8 @@ export default function Index() {
               </>
             }
             title="TypeScript lol"
-          />
-          <Feature
+          /> */}
+          {/* <Feature
             description={
               <>
                 Connect your wallet to prove your identity and edit the profile in the
@@ -97,8 +97,8 @@ export default function Index() {
               </>
             }
             title="Rainbow Auth"
-          />
-          <Feature
+          /> */}
+          {/* <Feature
             description={
               <>
                 Connect your wallet to prove your identity and edit the profile in the
@@ -106,9 +106,9 @@ export default function Index() {
               </>
             }
             title="Bla bla"
-          />
+          /> */}
         </div>
-      </Container> */}
+      </Container>
     </MarketingLayout>
   );
 }
