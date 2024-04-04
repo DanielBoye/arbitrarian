@@ -13,11 +13,15 @@ export const metadata = {
 export default function App({ children }) {
     return (
       <>   
-          <Providers>
-            <main className="flex flex-col grow shrink basis-auto items-center">
-                {children}
-            </main>
-          </Providers>
+          <html lang="en">
+              <body>
+                  <Providers>
+                    <main className="flex flex-col grow shrink basis-auto items-center">
+                        {children}
+                    </main>
+                  </Providers>
+              </body>
+          </html>
       </>
     );
 }
