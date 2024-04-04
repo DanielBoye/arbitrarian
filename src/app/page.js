@@ -1,31 +1,104 @@
+import clsx from "clsx";
 import { SignInIcon } from "@/components/icons/signIn";
-import "./globals.css";
-import Link from "next/link";
+import { MarketingLayout } from "@/components/marketing/Marketing";
+import { Button, LinkButton } from "@/components/icons/Button/Button";
+import { Container } from "@/components/container/Container";
+import styles from "./index.module.css";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
-export default function Home() {
-    return (
-        <div className="flex flex-col w-1/3 space-y-4">
-            <h1 className="text-primary text-4xl font-bold w-1/3">
-                Learn, build and dev&nbsp;on Arbitrum
-            </h1>
-            <p className="text-neutral text-base w-1/3">
-                Learn how to develop and deploy tokens from smart contracts from
-                a few clicks&nbsp;that deploys in seconds.
-            </p>
-            <div className="flex items-center space-x-4">
-                <Link
-                    className="bg-primary text-primary-content rounded flex items-center justify-center p-2"
-                    href="#"
-                >
-                    <span className="ml-2">
-                        <SignInIcon className="h-4 w-4" />
-                    </span>
-                    <span className="ml-2">Connect Wallet</span>
-                </Link>
-                <Link className="bg-secondary text-secondary-content rounded p-2" href="#">
-                    Learn More
-                </Link>
-            </div>
+function Feature({ title, description, className, ...props }) {
+  return (
+    <div className={clsx(className, styles.featuresFeature)} {...props}>
+      <h4 className={styles.featuresFeatureTitle}>{title}</h4>
+      <p className={styles.featuresFeatureDescription}>{description}</p>
+    </div>
+  );
+}
+
+export default function Index() {
+  return (
+    <MarketingLayout>
+      <Container className={styles.section}>
+        <div className={styles.heroInfo}>
+          <h1 className={styles.heroTitle}>
+            Learn, build and dev&nbsp;on Arbitrum
+          </h1>
+          <p className={styles.heroLead}>
+            Learn how to develop and deploy tokens from smart contracts
+            from a few clicks&nbsp;that deploys in seconds.
+          </p>
         </div>
-    );
+        <div className={styles.heroActions}>
+          {/* <Button icon={<SignInIcon />} onClick={() => signIn()}>
+            Connect Wallet
+          </Button> */}
+          <LinkButton
+            href="https://arbitrum.io/"
+            target="_blank"
+            variant="secondary"
+          >
+            Learn more
+          </LinkButton>
+        </div>
+      </Container>
+      {/* <Container className={styles.section}>
+        <h2 className={styles.sectionTitle}>Features</h2>
+        <div className={styles.featuresGrid}>
+          <Feature
+            description={
+              <>
+                asdjaslfjasløkfjasøldkfjasløkdfjasløkdjfsl
+                lajsdaskljfaslkjfasdlkfjsadlfkjsadlfkjøasdfølk
+              </>
+            }
+            title="Very cool"
+          />
+          <Feature
+            description={
+              <>
+                Best practices followed, using a mixture of SSR and custom API
+                endpoints. Modify documents from both client and server.
+              </>
+            }
+            title="Next.js"
+          />
+          <Feature
+            description={
+              <>
+                Adjust our reusable interface & design system to fit your needs.
+              </>
+            }
+            title="User Interface"
+          />
+          <Feature
+            description={
+              <>
+                All custom client and server functions are fully typed, and easy
+                to update.
+              </>
+            }
+            title="TypeScript lol"
+          />
+          <Feature
+            description={
+              <>
+                Connect your wallet to prove your identity and edit the profile in the
+                profile page.
+              </>
+            }
+            title="Rainbow Auth"
+          />
+          <Feature
+            description={
+              <>
+                Connect your wallet to prove your identity and edit the profile in the
+                profile page.
+              </>
+            }
+            title="Bla bla"
+          />
+        </div>
+      </Container> */}
+    </MarketingLayout>
+  );
 }

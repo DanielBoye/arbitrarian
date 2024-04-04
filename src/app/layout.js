@@ -1,6 +1,8 @@
 import Providers from "./providers";
 import "./globals.css";
-import RootHeader from "@/components/RootHeader";
+import "@rainbow-me/rainbowkit/styles.css";
+import "./normalize.css";
+
 
 export const metadata = {
     title: "Arbitrarian",
@@ -8,22 +10,18 @@ export const metadata = {
         "A Tableland + Next.js + wagmi + RainbowKit Project for LearnWEB3 Hackathon",
 };
 
-export default function RootLayout({ children }) {
+export default function App({ children }) {
     return (
-        <html lang="en">
-            <body>
-                <Providers>
-                        <header className="grow-0 shrink basis-auto">
-                            <RootHeader />
-                        </header>
-                        <main className="flex flex-col grow shrink basis-auto items-center">
-                            {children}
-                        </main>
-                        <footer className="grow-0 shrink basis-auto">
-                            Footer
-                        </footer>
-                </Providers>
-            </body>
-        </html>
+      <>   
+          <html lang="en">
+              <body>
+                  <Providers>
+                    <main className="flex flex-col grow shrink basis-auto items-center">
+                        {children}
+                    </main>
+                  </Providers>
+              </body>
+          </html>
+      </>
     );
 }
