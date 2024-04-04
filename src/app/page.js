@@ -1,10 +1,14 @@
+"use client"
+
 import clsx from "clsx";
 import { SignInIcon } from "@/components/icons/signIn";
 import { MarketingLayout } from "@/components/marketing/Marketing";
 import { Button, LinkButton } from "@/components/icons/Button/Button";
 import { Container } from "@/components/container/Container";
 import styles from "./index.module.css";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { ComponentProps, useCallback } from "react"; // Import useCallback
+
+
 
 function Feature({ title, description, className, ...props }) {
   return (
@@ -16,12 +20,18 @@ function Feature({ title, description, className, ...props }) {
 }
 
 export default function Index() {
+  // Directly define the redirection inside the onClick
+  const redirectToGoogle = useCallback(() => {
+    // Redirect to Google
+    window.location.href = 'https://google.com';
+  }, []);
+
   return (
     <MarketingLayout>
-      <Container className={styles.section}>
+      <Container className={styles.sectionHeader}>
         <div className={styles.heroInfo}>
           <h1 className={styles.heroTitle}>
-            Learn, build and dev&nbsp;on Arbitrum
+            Arbitrarian
           </h1>
           <p className={styles.heroLead}>
             Learn how to develop and deploy tokens from smart contracts
@@ -29,9 +39,9 @@ export default function Index() {
           </p>
         </div>
         <div className={styles.heroActions}>
-          {/* <Button icon={<SignInIcon />} onClick={() => signIn()}>
+          <Button icon={<SignInIcon />} onClick={redirectToGoogle}>
             Connect Wallet
-          </Button> */}
+          </Button>
           <LinkButton
             href="https://arbitrum.io/"
             target="_blank"
@@ -41,7 +51,7 @@ export default function Index() {
           </LinkButton>
         </div>
       </Container>
-      {/* <Container className={styles.section}>
+      <Container className={styles.sectionFeature}>
         <h2 className={styles.sectionTitle}>Features</h2>
         <div className={styles.featuresGrid}>
           <Feature
@@ -62,15 +72,15 @@ export default function Index() {
             }
             title="Next.js"
           />
-          <Feature
+          {/* <Feature
             description={
               <>
                 Adjust our reusable interface & design system to fit your needs.
               </>
             }
             title="User Interface"
-          />
-          <Feature
+          /> */}
+          {/* <Feature
             description={
               <>
                 All custom client and server functions are fully typed, and easy
@@ -78,8 +88,8 @@ export default function Index() {
               </>
             }
             title="TypeScript lol"
-          />
-          <Feature
+          /> */}
+          {/* <Feature
             description={
               <>
                 Connect your wallet to prove your identity and edit the profile in the
@@ -87,8 +97,8 @@ export default function Index() {
               </>
             }
             title="Rainbow Auth"
-          />
-          <Feature
+          /> */}
+          {/* <Feature
             description={
               <>
                 Connect your wallet to prove your identity and edit the profile in the
@@ -96,9 +106,9 @@ export default function Index() {
               </>
             }
             title="Bla bla"
-          />
+          /> */}
         </div>
-      </Container> */}
+      </Container>
     </MarketingLayout>
   );
 }
