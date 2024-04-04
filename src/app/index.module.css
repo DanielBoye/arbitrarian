@@ -1,5 +1,8 @@
-.section {
+/* Feature*/
+.sectionFeature {
+    /* Top of feature */
     margin-top: var(--space-20);
+    /* Bottom of feature */
     margin-bottom: var(--space-20);
   }
   
@@ -15,16 +18,16 @@
     font-size: 66px;
     font-weight: 400;
     line-height: 60px;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.025em;
     font-family: 'Adobe Text Pro', serif;
     font-style: normal;
-    --leading-trim-start: 0.42em;
-    --leading-trim-end: 0.38em;
+    --leading-trim-start: 0.21em;
+    --leading-trim-end: 0.19em;
   }
   
   .heroLead {
     max-width: 460px;
-    color: var(--color-text-lighter);
+    color: color(display-p3 0.949 0.969 0.996 / 0.708);
     font-size: var(--size-xl);
     font-family: "Untitled Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   }
@@ -58,4 +61,71 @@
   .featuresFeatureDescription {
     font-size: var(--size-sm);
   }
+
+/* Header */
+.sectionHeader {
+    margin-top: var(--space-20);
+    margin-bottom: var(--space-15);
+  }
   
+  .sectionTitle {
+    margin-bottom: var(--space-10);
+    font-size: var(--size-2xl);
+    font-weight: 700;
+    margin-top: -20px;
+  }
+  
+  .heroTitle {
+    max-width: 400px;
+    margin-bottom: 12px;
+    font-size: 66px;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: -0.025em;
+    font-family: 'Adobe Text Pro', serif;
+    font-style: normal;
+    --leading-trim-start: 0.21em;
+    --leading-trim-end: 0.19em;
+  }
+  
+  .heroLead {
+    max-width: 460px;
+    color: color(display-p3 0.949 0.969 0.996 / 0.708);
+    font-size: var(--size-xl);
+    font-family: "Untitled Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+  
+  .heroInfo {
+    margin-bottom: var(--space-12);
+  }
+  
+  .heroActions {
+    display: flex;
+    gap: var(--space-6);
+  }
+  
+  .featuresGrid {
+    display: grid;
+    gap: var(--space-10);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  
+  .featuresFeature {
+    padding: var(--space-9);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+  
+  .featuresFeatureTitle {
+    margin-bottom: var(--space-2);
+    font-weight: 600;
+  }
+  
+  .featuresFeatureDescription {
+    font-size: var(--size-sm);
+  }
+
+
+
+
+
