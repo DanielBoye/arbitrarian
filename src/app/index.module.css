@@ -127,5 +127,9 @@
 
 
 
-
-
+  .sectionDashboard {
+    /* Top of feature */
+    margin-top: var(--space-10);
+    /* Bottom of feature */
+    margin-bottom: var(--space-20);
+  }
