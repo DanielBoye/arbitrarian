@@ -33,7 +33,7 @@ export default function Index() {
           <h1 className={styles.heroTitle}>
             Arbitrarian
           </h1>
-          <p className={styles.heroLead}>
+          <p className={styles.heroLeadDashboard}>
             Learn how to develop and deploy tokens from smart contracts
             from a few clicks&nbsp;that deploys in seconds.
           </p>

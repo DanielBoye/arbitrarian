@@ -12,15 +12,37 @@ const welcomeMessages = [
     "Willkommen!",
     "Benvenuto!",
     "Bem-vindo!",
-];
-
-const Dashboard = () => {
+    "Добро пожаловать!",
+    "欢迎！",
+    "ようこそ！",
+    "환영합니다!",
+    "Vítejte!",
+    "Velkommen!",
+    "Welkom!",
+    "Välkommen!",
+    "Tervetuloa!",
+    "स्वागत हे!",
+    "Καλώς ήρθατε!",
+    "Benvenuti!",
+    "Hoşgeldiniz!",
+    "ברוכים הבאים!",
+    "Bine ați venit!",
+    "Добредојдовте!",
+    "Velkomin!",
+    "Ласкаво просимо!",
+    "أهلاً وسهلاً"
+  ];
+  
+  
+  const Dashboard = () => {
     const [welcomeMessage, setWelcomeMessage] = useState("Welcome!");
-
+  
     const handleWelcomeClick = () => {
-        const randomMessage =
-            welcomeMessages[Math.floor(Math.random() * welcomeMessages.length)];
-        setWelcomeMessage(randomMessage);
+      const filteredMessages = welcomeMessages.filter(message => message !== welcomeMessage);
+      
+      const newMessage = filteredMessages[Math.floor(Math.random() * filteredMessages.length)];
+      
+      setWelcomeMessage(newMessage);
     };
 
     return (
@@ -35,8 +57,11 @@ const Dashboard = () => {
                         </label>
                     </h2>
                     <p className={styles.heroLeadDashboard}>
-                        Proident ea in consequat aliquip consectetur sit nulla
-                        sint.
+                        Here, you have the power to manage, deploy and mint
+                        ERC20 tokens from a few clicks and interacting with it.
+                        You will also be challenge or learn in our quiz section
+                        where we focus on security and flaws developers do
+                        beyond.
                     </p>
                 </Container>
                 <Container className={styles.sectionDashboard}>
@@ -52,8 +77,10 @@ const Dashboard = () => {
                                 <div className="card-body">
                                     <h2 className="card-title">Quizes</h2>
                                     <p>
-                                        Test your knowledge through our several
-                                        profound quizes!
+                                        Test your knowledge with our
+                                        comprehensive quizzes designed to deepen
+                                        your understanding of blockchain
+                                        technology and smart contract security.
                                     </p>
                                 </div>
                             </div>
@@ -68,8 +95,11 @@ const Dashboard = () => {
                                 <div className="card-body">
                                     <h2 className="card-title">Token</h2>
                                     <p>
-                                        Deploy your own ERC20 token on the
-                                        Arbitrum network!
+                                        Launch your first ERC20 token on the
+                                        Arbitrum Sepolia network effortlessly
+                                        with just a few clicks, and then import
+                                        it directly into your wallet and start
+                                        interacting with it!.
                                     </p>
                                 </div>
                             </div>
