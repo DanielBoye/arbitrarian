@@ -30,7 +30,7 @@ export default function Index() {
     <MarketingLayout>
       <Container className={styles.sectionHeader}>
         <div className={styles.heroInfo}>
-          <h1 className={styles.heroTitle}>
+          <h1 className={styles.heroTitleRoot}>
             Arbitrarian
           </h1>
           <p className={styles.heroLeadDashboard}>
@@ -52,7 +52,7 @@ export default function Index() {
         </div>
       </Container>
       <Container className={styles.sectionFeature}>
-        <h2 className={styles.sectionTitle}>Features</h2>
+        <h2 className={styles.sectionTitle}>Learn</h2>
         <div className={styles.featuresGrid}>
           <Feature
             description={
@@ -61,7 +61,7 @@ export default function Index() {
                 lajsdaskljfaslkjfasdlkfjsadlfkjsadlfkjøasdfølk
               </>
             }
-            title="Very cool"
+            title="Web3 Security"
           />
           <Feature
             description={
@@ -70,43 +70,8 @@ export default function Index() {
                 endpoints. Modify documents from both client and server.
               </>
             }
-            title="Next.js"
+            title="ERC20 Tokens"
           />
-          {/* <Feature
-            description={
-              <>
-                Adjust our reusable interface & design system to fit your needs.
-              </>
-            }
-            title="User Interface"
-          /> */}
-          {/* <Feature
-            description={
-              <>
-                All custom client and server functions are fully typed, and easy
-                to update.
-              </>
-            }
-            title="TypeScript lol"
-          /> */}
-          {/* <Feature
-            description={
-              <>
-                Connect your wallet to prove your identity and edit the profile in the
-                profile page.
-              </>
-            }
-            title="Rainbow Auth"
-          /> */}
-          {/* <Feature
-            description={
-              <>
-                Connect your wallet to prove your identity and edit the profile in the
-                profile page.
-              </>
-            }
-            title="Bla bla"
-          /> */}
         </div>
       </Container>
     </MarketingLayout>
