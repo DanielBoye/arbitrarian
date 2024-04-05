@@ -7,7 +7,6 @@ import { http } from "viem";
 const chains = [
   chain.sepolia,  
   chain.arbitrumSepolia,
-  chain.mainnet,
 ];
 
 const transports = Object.fromEntries(chains.map((c) => [c.id, http()]));
