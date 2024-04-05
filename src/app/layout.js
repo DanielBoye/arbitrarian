@@ -16,7 +16,7 @@ export default function App({ children }) {
           <html lang="en">
               <body>
                   <Providers>
-                    <main className="flex flex-col grow shrink basis-auto items-center">
+                    <main>
                         {children}
                     </main>
                   </Providers>
