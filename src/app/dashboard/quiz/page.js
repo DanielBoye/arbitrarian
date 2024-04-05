@@ -1,11 +1,11 @@
 "use client";
 
-import Token from "@/components/token/Token";
+import Quiz from "@/components/Quiz";
 import { useAccount } from "wagmi";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useEffect } from "react";
 
-export default function Root() {
+const QuizPage = () => {
     const { isConnected } = useAccount();
     const { openConnectModal } = useConnectModal();
 
@@ -16,8 +16,10 @@ export default function Root() {
     });
 
     return (
-        <div>
-            <Token />
+        <div className="min-h-screen text-white p-5">
+            <Quiz />
         </div>
     );
-}
+};
+
+export default QuizPage;
