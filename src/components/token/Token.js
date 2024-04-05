@@ -6,13 +6,8 @@ import data from "./contract.json";
 import { MarketingLayout } from "@/components/dashboardlayout/Marketing";
 import styles from "../../app/index.module.css";
 import { Container } from "../container/Container";
-import Prism from "prismjs";
-import "./prism-solidity"; // Import the Solidity extension after Prism
 
 const Token = ({ signer }) => {
-    useEffect(() => {
-        Prism.highlightAll();
-    }, []);
 
     const [name, setName] = useState("");
     const [symbol, setSymbol] = useState("");
