@@ -20,8 +20,8 @@ const Dashboard = () => {
     return (
         <>
             <Container className={styles.sectionFeature}>
-                <h2 className={styles.sectionTitle}>Lorem ipsum</h2>
-                <p className={styles.heroLead}>
+                <h2 className={styles.sectionTitleDashboard}>Lorem ipsum</h2>
+                <p className={styles.heroLeadDashboard}>
                     Proident ea in consequat aliquip consectetur sit nulla sint.
                 </p>
             </Container>
