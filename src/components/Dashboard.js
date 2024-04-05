@@ -1,29 +1,27 @@
-import { useState, useEffect } from 'react';
+import { useState } from "react";
 import clsx from "clsx";
-import { useAccount } from "wagmi";
 import { Container } from "@/components/container/Container";
 import { MarketingLayout } from "@/components/dashboardlayout/Marketing";
 import styles from "../app/index.module.css";
 import Link from "next/link";
 
-// const welcomeMessages = [
-//     "Welcome!", 
-//     "Bienvenidos!",
-//     "Bienvenue!",
-//     "Willkommen!",
-//     "Benvenuto!",
-//     "Bem-vindo!",
-// ];
+const welcomeMessages = [
+    "Welcome!",
+    "Bienvenidos!",
+    "Bienvenue!",
+    "Willkommen!",
+    "Benvenuto!",
+    "Bem-vindo!",
+];
 
 const Dashboard = () => {
-    const { address, isConnected } = useAccount();
+    const [welcomeMessage, setWelcomeMessage] = useState("Welcome!");
 
-    // const [welcomeMessage, setWelcomeMessage] = useState("Welcome!");
-
-    // const handleWelcomeClick = () => {
-    //     const randomMessage = otherMessages[Math.floor(Math.random() * otherMessages.length)];
-    //     setWelcomeMessage(randomMessage);
-    // };
+    const handleWelcomeClick = () => {
+        const randomMessage =
+            welcomeMessages[Math.floor(Math.random() * welcomeMessages.length)];
+        setWelcomeMessage(randomMessage);
+    };
 
     return (
         <>
