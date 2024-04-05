@@ -16,7 +16,7 @@ export function MarketingHeader({
 }: ComponentProps<"header">) {
 
   // Create a function to handle redirection
-  const redirectToGoogle = useCallback(() => {
+  const redirectDashboard = useCallback(() => {
     // Redirect to Google
     window.location.href = '/dashboard';
   }, []);
@@ -25,10 +25,10 @@ export function MarketingHeader({
     <header className={clsx(className, styles.header)} {...props}>
       <Container className={styles.container}>
         <Link href="/dashboard">
-          <Logo />
+          {/* <Logo /> */}
         </Link>
         {/* Update the Button onClick to use redirectToGoogle */}
-        <Button icon={<SignInIcon />} onClick={redirectToGoogle}>
+        <Button icon={<SignInIcon />} onClick={redirectDashboard}>
           Sign In
         </Button>
       </Container>
