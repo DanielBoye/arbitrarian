@@ -1,26 +1,40 @@
+import { useState, useEffect } from 'react';
 import clsx from "clsx";
 import { useAccount } from "wagmi";
 import { Container } from "@/components/container/Container";
 import { MarketingLayout } from "@/components/dashboardlayout/Marketing";
 import styles from "../app/index.module.css";
 
-function Feature({ title, description, className, ...props }) {
-    return (
-        <div className={clsx(className, styles.featuresFeature)} {...props}>
-            <h4 className={styles.featuresFeatureTitle}>{title}</h4>
-            <p className={styles.featuresFeatureDescription}>{description}</p>
-        </div>
-    );
-}
+// const welcomeMessages = [
+//     "Welcome!", 
+//     "Bienvenidos!",
+//     "Bienvenue!",
+//     "Willkommen!",
+//     "Benvenuto!",
+//     "Bem-vindo!",
+// ];
 
 const Dashboard = () => {
     const { address, isConnected } = useAccount();
+
+    // const [welcomeMessage, setWelcomeMessage] = useState("Welcome!");
+
+    // const handleWelcomeClick = () => {
+    //     const randomMessage = otherMessages[Math.floor(Math.random() * otherMessages.length)];
+    //     setWelcomeMessage(randomMessage);
+    // };
 
     return (
         <>  
             <MarketingLayout>
                 <Container className={styles.sectionFeature}>
-                    <h2 className={styles.sectionTitleDashboard}>Lorem ipsum</h2>
+                    <h2 className={styles.sectionTitleDashboard}>
+                        <label className="swap" onClick={handleWelcomeClick}>
+                            <input type="checkbox" />
+                            <div className="swap-on">{welcomeMessage}</div>
+                            <div className="swap-off">{welcomeMessage}</div>
+                        </label>
+                    </h2>
                     <p className={styles.heroLeadDashboard}>
                         Proident ea in consequat aliquip consectetur sit nulla sint.
                     </p>
