@@ -18,13 +18,13 @@ export function MarketingHeader({
   // Create a function to handle redirection
   const redirectToGoogle = useCallback(() => {
     // Redirect to Google
-    window.location.href = 'https://google.com';
+    window.location.href = '/dashboard';
   }, []);
 
   return (
     <header className={clsx(className, styles.header)} {...props}>
       <Container className={styles.container}>
-        <Link href="https://google.com">
+        <Link href="/dashboard">
           <Logo />
         </Link>
         {/* Update the Button onClick to use redirectToGoogle */}

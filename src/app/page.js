@@ -23,7 +23,7 @@ export default function Index() {
   // Directly define the redirection inside the onClick
   const redirectToGoogle = useCallback(() => {
     // Redirect to Google
-    window.location.href = 'https://google.com';
+    window.location.href = '/dashboard';
   }, []);
 
   return (
