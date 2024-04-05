@@ -4,6 +4,8 @@ import Token from "@/components/token/Token";
 import { useAccount } from "wagmi";
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useEffect } from "react";
+import { useSigner } from "@/hooks/useSigner";
+
 
 export default function Root() {
     const { isConnected } = useAccount();
@@ -15,9 +17,12 @@ export default function Root() {
         }
     });
 
+
+    const signer = useSigner();
+
     return (
         <div>
-            <Token />
+            <Token signer={signer}/>
         </div>
     );
 }
