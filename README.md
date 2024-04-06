@@ -1,6 +1,7 @@
 # arbitrarian.xyz
 
-*description*
+<img src="/public/logo.svg" alt="Arbitrarian Project Logo" width="200" />
+
 
 ## Project Description
 
