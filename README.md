@@ -1,8 +1,16 @@
 # arbitrarian.xyz
 
+Learn about smart contract security and deploy ERC20 tokens on the Arbitrum Sepolia Network
+
 ## Project Description
 
 ### Components
+
+#### Dashboard
+
+The `Dashboard.js` component serves as the primary gateway for users, presenting the core functionalities of the application through interactive cards. Initially, it greets users with a randomly selected welcome message from a curated list, aiming to create a welcoming atmosphere for a global audience. This interactive element is made possible by utilizing React's `useState` hook to maintain the state of the `welcomeMessage`, which users can change with a simple click, highlighting the component's dynamic and user-centric design.
+
+Central to the `Dashboard.js` are two key features, each represented by a card: one leading to the quizzes section and the other to the token deployment function. The quizzes card invites users to test and expand their knowledge on blockchain and smart contract security, while the token card offers a simplified process for creating `ERC20` tokens on the Arbitrum Sepolia network. This bifurcation is achieved through the thoughtful use of Next.js's Link component, ensuring seamless navigation within the application.
 
 #### Token
 
@@ -31,6 +39,14 @@ The `Quiz` component holds all of the questions and renders them in order, one a
 The `QuizQuestion` component only has two sateful variables, `selectedOption` and `correct`, both whom are pretty self explanatory. The first thing we do is create a list of `options` for the question, based of the question given as a prop to our component. Here we used daisyui's radio component. We wrapped the `options` in a card with a button. The button is for submission and is the callback function mentioned earlier in the [Quiz](#quiz) component.
 
 ### Routes
+
+#### /dashboard
+
+The `/dashboard` route in the application serves as a central hub for users to access various functionalities related to ERC20 tokens and quizzes on blockchain technology and smart contract security. This route is rendered using the `Dashboard.js` component, which provides a welcoming user interface and easy navigation to the main features of the application: deploying tokens and taking quizzes.
+
+Upon entering the dashboard, users are greeted with a welcome message that can be changed by clicking on it, offering a personalized touch. The message is selected randomly from a predefined list of welcome messages in different languages, showcasing the international appeal and user-friendly nature of the application. Below the welcome message, a brief description introduces the core functionalities available in the dashboard: managing, deploying, and minting ERC20 tokens with ease, alongside an invitation to enhance their understanding of blockchain security through quizzes.
+
+The UI of the `Dashboard` component is divided into sections, each represented by a card that leads to either the token deployment feature or the quiz section. The first card, labeled "Quizzes," directs users to a series of quizzes designed to test and improve their knowledge of blockchain technology and smart contract security. The second card, titled "Token," offers users a straightforward pathway to deploy their own ERC20 tokens on the Arbitrum Sepolia network. This interactive and educational approach, combined with the straightforward navigation provided by `Link` components from Next.js, emphasizes the dashboard's role as an essential tool for users to engage with the application's features efficiently.
 
 #### /quiz
 The `page.js` file is where the main content for the route is stores. In here we import the [`QuizGrid`](#quizgrid) component.
@@ -66,85 +82,8 @@ From the user's perspective, the `/dashboard/token` page provides an interface t
 ### Other
 
 ## Project Links
-   - 🔗 *Github Link for Project*
+   - [🔗 Github Link for Project](https://github.com/DanielBoye/arbitrarian)
    - 🔗 *Youtube Link to Demo presentation*
-   - 🔗 *Pitch Link for Presentation Slides*
+   - [🔗 Pitch Link for Arbitrarian](https://www.canva.com/design/DAGBleXFjxM/HwUBct9xJaS_8-DZdLKKSQ/edit?utm_content=DAGBleXFjxM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) 
    - 🔗 *Document link for ChainSafe Ideathon*
-
-
-
-> A JavaScript template for @tableland + NextJS + wagmi + Rainbowkit projects
-
-## Table of Contents
-
-- [Background](#background)
-- [Usage](#usage)
-  - [Prerequisites](#prerequisites)
-  - [Installation \& build](#installation--build)
-- [Development](#development)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Background
-
-This repo contains starter code for a [NextJS](https://nextjs.org/docs) + [wagmi](https://wagmi.sh/) + [Rainbowkit](https://www.rainbowkit.com/) project with useful Tableland clients included, bootstrapped using [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app). It contains a basic example for connecting to a wallet to then allow creating, writing to, and reading a table using the Tableland SDK ([`@tableland/js-tableland)`](https://github.com/tablelandnetwork/js-tableland)) as well as Local Tableland ([`@tableland/local`](https://github.com/tablelandnetwork/local-tableland)) support during development. Both linting (with [`eslint`](https://eslint.org/)) and code formatting (with [`prettier`](https://prettier.io/)) are also included, along with [Tailwind CSS](https://tailwindcss.com/).
-
-## Usage
-
-### Prerequisites
-
-Before you get started, you'll need to create a WalletConnect account and create a project and retrieve the project ID: [here](https://walletconnect.com/)
-
-RainbowKit & wagmi require a WalletConnect project ID in order to work properly. These should be set up and configured in a `.env` file within this project's root and saved to the following variables:
-
-```txt
-NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=your_wallet_connect_project_id
-```
-
-There's also a `NEXT_PUBLIC_ENABLE_TESTNETS` boolean value you can set in order to enable or disable wallet connections to testnet chains. All of the chains that Tableland supports are configured, including the Hardhat chain if you choose to run Local Tableland during development.
-
-### Installation & build
-
-First, clone this repo:
-
-```sh
-git clone https://github.com/tablelandnetwork/next-js-tableland-template
-```
-
-To get started, you can run `npm run up` to start the app. This runs `npm install` plus the `build` / `start` scripts and then serves the application at [http://localhost:3000](http://localhost:3000). The starter template includes the following, located in `src/components/Tableland.jsx`:
-
-- Navbar wallet connection using RainbowKit.
-- A form with inputs for creating a table (hardcoded with a `id INTEGER PRIMARY KEY, val TEXT` schema) and writing a single value to it.
-- Reading and rendering your table's data on button click.
-
-The wagmi setup occurs in `src/app/providers` and `src/wagmi.js`. Lastly, there is a `useSigner` hook in `src/hooks/useSigner.js`. It's a required adapter for [`ethers`](https://docs.ethers.org/v5/) to work with wagmi (and RainbowKit), which use [`viem`](https://viem.sh/) under the hood.
-
-## Development
-
-If you'd like to run the project locally, use the following scripts in separate terminal windows:
-
-```sh
-npm run lt
-npm run dev
-```
-
-This will do two things: spin up a Local Tableland node and run the app in development mode to reflect live code changes. Local Tableland is an _extremely_ useful tool to develop as it's a lightweight Tableland validator (also spinning up a Hardhat node under the hood) that runs locally on your machine with full Tableland protocol compliance.
-
-There are also a few other scripts you can use:
-
-- `npm run lint`: Lint the codebase with `eslint` (along with the `lint:fix` option).
-- `npm run prettier`: Prettify the code format with `prettier` (along with the `prettier:fix` option).
-- `npm run format`: Both lint and format the codebase with `eslint` and `prettier`, also fixing any issues it can.
-- `npm run clean`: Remove the `.next` folder.
-- `npm run test`: A placeholder for running tests (currently empty).
-
-## Contributing
-
-PRs accepted.
-
-Small note: If editing the README, please conform to the
-[standard-readme](https://github.com/RichardLitt/standard-readme) specification.
-
-## License
-
-MIT AND Apache-2.0, © 2021-2023 Tableland Network Contributors
+   - [🔗 Website Link](https://arbitrarian.xyz) 
