@@ -8,10 +8,6 @@ import { Container } from "@/components/container/Container";
 import styles from "./index.module.css";
 import { ComponentProps, useCallback } from "react"; // Import useCallback
 
-<<<<<<< HEAD
-
-=======
->>>>>>> f4da5990d78a05feeb039acdefbd8c5041d83472
 function Feature({ title, description, className, ...props }) {
     return (
         <div className={clsx(className, styles.featuresFeature)} {...props}>
