@@ -26,7 +26,8 @@ const QuizComponent = ({ id }) => {
         async (correct) => {
             if (numSolvesQuestions == questions.length) {
                 await incrementSolvedQuizes(signer, "", account.address);
-                redirect("/dashboard/quiz")
+                // redirect("/dashboard/quiz")
+                window.location.href = "/dashboard/quiz"
             }
             if (correct && questionsIndex < questions.length - 1) {
                 setQuestionsIndex((prevIndex) => prevIndex + 1);

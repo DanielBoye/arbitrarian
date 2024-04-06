@@ -3,7 +3,6 @@
 import { useState } from "react";
 import clsx from "clsx";
 import styles from "@/app/index.module.css";
-import { useSigner } from "@/hooks/useSigner";
 
 const QuizQuestion = ({ question, nqfunc }) => {
     const [selectedOption, setSelectedOption] = useState(0); // Initialize state for the selected option

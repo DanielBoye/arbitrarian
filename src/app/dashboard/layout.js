@@ -26,6 +26,10 @@ export default function DashboardLayout({ children }) {
     async function setCookieFromTable() {
         const table = await readTable(signer, "");
 
+        if (table.length == 0) {
+            insertUser(signer, "", address)
+        }
+
         for (let i = 0; i < table.length; i++) {
             if (address == table[i].add) {
                 setCookie(table[i].quizes_solved);

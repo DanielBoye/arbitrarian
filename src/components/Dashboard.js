@@ -54,30 +54,24 @@ const Dashboard = () => {
 
     return (
         <>
-            <Container className={styles.sectionFeature}>
-                <h2 className={styles.sectionTitleDashboard}>
+            <Container className="flex flex-col justify-start">
+                <h2 className={clsx(styles.sectionTitleDashboard, "mt-12")}>
                     <label className="swap" onClick={handleWelcomeClick}>
                         <input type="checkbox" />
                         <div className="swap-on">{welcomeMessage}</div>
                         <div className="swap-off">{welcomeMessage}</div>
                     </label>
                 </h2>
-                <p className={styles.heroLeadDashboard}>
+                <p className={clsx(styles.heroLeadDashboard, "mt-4")}>
                     <span>
                         Here in your Dashboard, you have the power to manage,
                         deploy and mint ERC20 tokens from a few clicks and
-                        interacting with it.
-                    </span>
-                    <br></br>
-                    <span>
-                        You will can also choose to learn or be challenged in
-                        our quiz section where we focus on security and smart
-                        contract flaws.
+                        interacting with it.&#13; You will can also choose to
+                        learn or be challenged in our quiz section where we
+                        focus on security and smart contract flaws.
                     </span>
                 </p>
-            </Container>
-            <Container className={styles.sectionDashboard}>
-                <div className="flex flex-row justify-center gap-4">
+                <div className="flex flex-row gap-4 mt-24">
                     <Link href="/dashboard/quiz">
                         <div
                             className={clsx(

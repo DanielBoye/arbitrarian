@@ -6,7 +6,7 @@ import { Database } from "@tableland/sdk";
 Create Table function should only be used by developers as it is not intended for users
 
 EXAMPLE:
-createTable(signer, "users", `id INTEGER PRIMARY KEY, user_addr TEXT NOT NULL UNIQE, username TEXT, quizes_solved INTEGER DEFAULT 0`)
+createTable(signer, "users", `id INTEGER PRIMARY KEY, user_addr TEXT NOT NULL UNIQUE, username TEXT, quizes_solved INTEGER DEFAULT 0`)
 */
 
 export async function createTable(signer, tableName, schema) {
@@ -32,7 +32,7 @@ export async function insertUser(signer, tableName, user_addr) {
         console.log(tableName);
         console.log(`${tableName}`);
         const { meta: insert } = await db
-            .prepare(`INSERT INTO users_11155111_1500 (user_addr) VALUES (?);`)
+            .prepare(`INSERT INTO users_421614_508 (user_addr) VALUES (?);`)
             .bind(user_addr)
             .run();
         await insert.txn?.wait();
@@ -71,7 +71,7 @@ export async function incrementSolvedQuizes(signer, tableName, user_addr) {
         // if (tableName) {
             const { meta: increment } = await db
                 .prepare(
-                    `UPDATE users_11155111_1500 SET quizes_solved = quizes_solved + 1 WHERE user_addr = (?);`
+                    `UPDATE users_421614_508 SET quizes_solved = quizes_solved + 1 WHERE user_addr = (?);`
                 )
                 .bind(user_addr)
                 .run();
@@ -92,7 +92,7 @@ export async function readTable(signer, tableName) {
 
         // if (tableName) {
         const { results } = await db
-            .prepare(`SELECT * FROM users_11155111_1500;`)
+            .prepare(`SELECT * FROM users_421614_508;`)
             .all();
         // console.info(`Read data from table '${tableName}':`);
         // console.info(results);

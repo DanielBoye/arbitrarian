@@ -55,14 +55,14 @@ const Token = ({ signer }) => {
     };
     return (
         <>
-            <Container className={styles.sectionFeature}>
-                <h2 className={styles.sectionTitleDashboard}>
+            <Container className=" mt-8">
+                <h2 className="font-bold text-4xl">
                     Deploy your first token!
                 </h2>
             </Container>
-            <Container className={styles.sectionDashboard}>
-                <div className="flex flex-row justify-center gap-4">
-                    <div>
+            <Container className={clsx(styles.sectionDashboard)}>
+                <div className="flex flex-row justify-between gap-4">
+                    <div className="flex flex-col justify-evenly">
                         <label className="input input-bordered flex items-center gap-8">
                             <input
                                 type="text"
@@ -84,7 +84,6 @@ const Token = ({ signer }) => {
                                         setSymbol(e.target.value.toUpperCase());
                                     }
                                 }}
-                                maxLength={3}
                             />
                         </label>
 
@@ -130,20 +129,7 @@ const Token = ({ signer }) => {
                         </pre>
                     </div>
                 </div>
-            </Container>
-            <Container className={styles.heroLeadWallet}>
-                {deployed ? (
-                    <p>
-                        Contract address:{" "}
-                        <span className={styles.contractAddress}>
-                            {contractAddress}
-                        </span>
-                    </p>
-                ) : null}
-            </Container>
-
-            <Container className={styles.sectionFeature}>
-                <h2 className={styles.sectionTitleDashboard}>ERC20</h2>
+                <h2 className={clsx(styles.sectionTitleDashboard, "mt-4")}>ERC20</h2>
                 <div className={styles.featuresGrid}>
                     <Feature
                         description={
@@ -178,6 +164,19 @@ const Token = ({ signer }) => {
                     />
                 </div>
             </Container>
+            {/* // */}
+            <Container className={styles.heroLeadWallet}>
+                {deployed ? (
+                    <p>
+                        Contract address:{" "}
+                        <span className={styles.contractAddress}>
+                            {contractAddress}
+                        </span>
+                    </p>
+                ) : null}
+            </Container>
+
+            
         </>
     );
 };
