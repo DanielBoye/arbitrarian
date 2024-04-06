@@ -10,13 +10,19 @@ The `QuizGrid` component visualizes all the available quizes as cards. Upon left
 #### QuizCard
 The `QuizCard` component is a very basic components utilizing only html and css. For the css we used a combination off .css files, tailwindss, and daisyui.
 
+#### Quiz
+The `Quiz` component holds all of the questions and renders them in order, one after the other, when the user submits the correct answer. First we initialize four states to keep track of the `questionsIndex`, quiz's `questions`, the `selectedQuestion`, and the `numSolvesQuestions`. We then use a custom hook defined under `src/hooks/useSigner` and the `useAccount` hook from `wagmi`. `useEffect` is also in use here, so that we can update, which question is visible to the user, when they click submit. The `nextQuestion` function is a callback function passed down as a prop to the `QuizQuestion` component later on. What it does is first check if the answer is the correct one. If it is then check too see if the user has answered all of the questions correctly, if they have, then increment their number of solved quizes by one. The `incrementSolvedQuizes` function updates our Tableland database for the logged in user. It then redirects the user back to the `/quiz` page. The second conditional statement in the function checks to see if the answer is correct and the `questionsIndex` is less than the # of `questions`. If it is then `setQuestionsIndex` and `setNumSolvesQuestions` to +1. We then return a simple `QuizQuestion` component wrapped in a simple custom `Container` component.
+
+#### QuizQuestion
+The `QuizQuestion` component only has two sateful variables, `selectedOption` and `correct`, both whom are pretty self explanatory. The first thing we do is create a list of `options` for the question, based of the question given as a prop to our component. Here we used daisyui's radio component. We wrapped the `options` in a card with a button. The button is for submission and is the callback function mentioned earlier in the [Quiz](#quiz) component.
+
 ### Routes
 
 #### /quiz
 The `page.js` file is where the main content for the route is stores. In here we import the [`QuizGrid`](#quizgrid) component.
 
 #### /quiz/id
-We used a dynamic route for each of the quizes. Each route takes in an `id`, which is corresponding to their index in the [JSON file](https://github.com/DanielBoye/arbitrarian/blob/main/src/utils/quizes.json) containing them. This id is then used to find the correct quiz and all of its questions later on.
+We used a dynamic route for each of the quizes. Each route takes in an `id`, which is corresponding to their index in the [JSON file](https://github.com/DanielBoye/arbitrarian/blob/main/src/utils/quizes.json) containing them. This id is then used to find the correct quiz and all of its questions later on. The `page.js` file only contains a `Quiz` component and passes down the `id` it has in its parameters as a prop.
 
 ### Other
 
