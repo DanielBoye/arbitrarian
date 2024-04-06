@@ -111,3 +111,17 @@
   --leading-trim-start: 0.21em;
   --leading-trim-end: 0.19em;
 }
+
+.contractAddress {
+  color: #8fbc8f;
+  white-space: nowrap;
+
+}
+
+.heroLeadWallet {
+  max-width: 520px;
+  color: color(display-p3 0.949 0.969 0.996 / 0.708);
+  font-size: var(--size-xl);
+  font-family: "Untitled Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+

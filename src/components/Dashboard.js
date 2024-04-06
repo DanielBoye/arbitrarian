@@ -57,11 +57,11 @@ const welcomeMessages = [
                         </label>
                     </h2>
                     <p className={styles.heroLeadDashboard}>
-                        Here, you have the power to manage, deploy and mint
-                        ERC20 tokens from a few clicks and interacting with it.
-                        You will also be challenge or learn in our quiz section
-                        where we focus on security and flaws developers do
-                        beyond.
+                        <span>Here in your Dashboard, you have the power to manage, deploy and mint
+                        ERC20 tokens from a few clicks and interacting with it.</span>
+                        <br></br>
+                        <span>You will can also choose to learn or be challenged in our quiz section
+                        where we focus on security and smart contract flaws.</span>
                     </p>
                 </Container>
                 <Container className={styles.sectionDashboard}>
@@ -99,7 +99,7 @@ const welcomeMessages = [
                                         Arbitrum Sepolia network effortlessly
                                         with just a few clicks, and then import
                                         it directly into your wallet and start
-                                        interacting with it!.
+                                        interacting with it!
                                     </p>
                                 </div>
                             </div>
