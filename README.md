@@ -1,8 +1,5 @@
 # arbitrarian.xyz
 
-<img src="/public/logo.svg" alt="Arbitrarian Project Logo" width="200" />
-
-
 ## Project Description
 
 ### Components
