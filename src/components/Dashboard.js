@@ -1,52 +1,117 @@
+import { useState } from "react";
 import clsx from "clsx";
-import { useAccount } from "wagmi";
 import { Container } from "@/components/container/Container";
 import { MarketingLayout } from "@/components/dashboardlayout/Marketing";
 import styles from "../app/index.module.css";
+import Link from "next/link";
+import { useSigner } from "@/hooks/useSigner";
+import { insertUser, readTable } from "@/utils/tableland";
+import { useAccount } from "wagmi";
 
-function Feature({ title, description, className, ...props }) {
-    return (
-        <div className={clsx(className, styles.featuresFeature)} {...props}>
-            <h4 className={styles.featuresFeatureTitle}>{title}</h4>
-            <p className={styles.featuresFeatureDescription}>{description}</p>
-        </div>
-    );
-}
+const welcomeMessages = [
+    "Welcome!",
+    "Bienvenidos!",
+    "Bienvenue!",
+    "Willkommen!",
+    "Benvenuto!",
+    "Bem-vindo!",
+    "Добро пожаловать!",
+    "欢迎！",
+    "ようこそ！",
+    "환영합니다!",
+    "Vítejte!",
+    "Velkommen!",
+    "Welkom!",
+    "Välkommen!",
+    "Tervetuloa!",
+    "स्वागत हे!",
+    "Καλώς ήρθατε!",
+    "Benvenuti!",
+    "Hoşgeldiniz!",
+    "ברוכים הבאים!",
+    "Bine ați venit!",
+    "Добредојдовте!",
+    "Velkomin!",
+    "Ласкаво просимо!",
+    "أهلاً وسهلاً",
+];
 
 const Dashboard = () => {
-    const { address, isConnected } = useAccount();
+    const [welcomeMessage, setWelcomeMessage] = useState("Welcome!");
+
+    const handleWelcomeClick = () => {
+        const filteredMessages = welcomeMessages.filter(
+            (message) => message !== welcomeMessage
+        );
+
+        const newMessage =
+            filteredMessages[
+                Math.floor(Math.random() * filteredMessages.length)
+            ];
+
+        setWelcomeMessage(newMessage);
+    };
 
     return (
-        <>  
-            <MarketingLayout>
-                <Container className={styles.sectionFeature}>
-                    <h2 className={styles.sectionTitleDashboard}>Lorem ipsum</h2>
-                    <p className={styles.heroLeadDashboard}>
-                        Proident ea in consequat aliquip consectetur sit nulla sint.
-                    </p>
-                </Container>
-                <Container className={styles.sectionDashboard}>
-                    <div className="flex flex-row justify-center gap-4">
-                        <div className={clsx("card w-96 shadow-xl", styles.featuresFeature)}>                    <div className="card-body">
-                                <h2 className="card-title">Learn about Web3</h2>
-                                <p>Learn about Blockchains, Arbitrum and smart contracts!</p>
-                                <div className="card-actions justify-end">
-                                    <button className="btn btn-primary">Learn now</button>
-                                </div>
+        <>
+            <Container className="flex flex-col justify-start">
+                <h2 className={clsx(styles.sectionTitleDashboard, "mt-12")}>
+                    <label className="swap" onClick={handleWelcomeClick}>
+                        <input type="checkbox" />
+                        <div className="swap-on">{welcomeMessage}</div>
+                        <div className="swap-off">{welcomeMessage}</div>
+                    </label>
+                </h2>
+                <p className={clsx(styles.heroLeadDashboard, "mt-4")}>
+                    <span>
+                        Here in your Dashboard, you have the power to manage,
+                        deploy and mint ERC20 tokens from a few clicks and
+                        interacting with it.&#13; You will can also choose to
+                        learn or be challenged in our quiz section where we
+                        focus on security and smart contract flaws.
+                    </span>
+                </p>
+                <div className="flex flex-row gap-4 mt-24">
+                    <Link href="/dashboard/quiz">
+                        <div
+                            className={clsx(
+                                "card w-96 shadow-xl hover:border-primary",
+                                styles.featuresFeature
+                            )}
+                        >
+                            {" "}
+                            <div className="card-body">
+                                <h2 className="card-title">Quizes</h2>
+                                <p>
+                                    Test your knowledge with our comprehensive
+                                    quizzes designed to deepen your
+                                    understanding of blockchain technology and
+                                    smart contract security.
+                                </p>
                             </div>
                         </div>
-                        <div className={clsx("card w-96 shadow-xl", styles.featuresFeature)}>
+                    </Link>
+                    <Link href="/dashboard/token">
+                        <div
+                            className={clsx(
+                                "card w-96 shadow-xl hover:border-primary",
+                                styles.featuresFeature
+                            )}
+                        >
                             <div className="card-body">
                                 <h2 className="card-title">Token</h2>
-                                <p>Deploy your own ERC20 token on the Arbitrum network!</p>
-                                <div className="card-actions justify-end">
-                                    <button className="btn btn-primary">Deploy Now</button>
-                                </div>
+                                <p>
+                                    Launch your first ERC20 token on the
+                                    Arbitrum Sepolia network effortlessly with
+                                    just a few clicks, and then import it
+                                    directly into your wallet and start
+                                    interacting with it!
+                                </p>
                             </div>
                         </div>
-                    </div>
-                </Container>
-            </MarketingLayout>
+                    </Link>
+                </div>
+            </Container>
         </>
     );
 };
