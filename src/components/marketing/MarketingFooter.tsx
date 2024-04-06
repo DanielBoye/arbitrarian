@@ -14,7 +14,7 @@ export function MarketingFooter({
   return (
     <footer className={clsx(className, styles.footer)} {...props}>
       <Container className={styles.container}>
-        <span className={styles.copyright}>© {year} Rohaan og Daniel</span>
+        <span className={styles.copyright}>© {year} Rohaan & Daniel</span>
         <LinkButton
           href="https://github.com/DanielBoye/arbitrarian"
           icon={<GitHubIcon />}

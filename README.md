@@ -6,7 +6,19 @@
 
 ### Components
 
+#### QuizGrid
+The `QuizGrid` component visualizes all the available quizes as cards. Upon left clicking a card, you will be redirected to its corresponding [dynamic route](#quizid). First the component initializes the `quizes` variable as an empty list, and uses the `useState` hook from react to create a stateful variable, `progress, setProgress`. We also utilize the `useEffect` hook from react to constantly update the `progress` variable. *We are aware this is an inefficient method, however, due to our time constraints this is the best we could do. We will be fixing this at a later date*. The progress value is a percentage of the # of available quizes and the # of quizes solved. The # of quizes solved is stored in a cookie, which is retrieved from the decentralized database using Tableland. We later iterate over all the quizes and give each of them their own `QuizCard` component, which is stores in the `quizes` list. Lastly we return some html and css with our radial progress bar and the grid of `QuizCards`.
+
+#### QuizCard
+The `QuizCard` component is a very basic components utilizing only html and css. For the css we used a combination off .css files, tailwindss, and daisyui.
+
 ### Routes
+
+#### /quiz
+The `page.js` file is where the main content for the route is stores. In here we import the [`QuizGrid`](#quizgrid) component.
+
+#### /quiz/id
+We used a dynamic route for each of the quizes. Each route takes in an `id`, which is corresponding to their index in the [JSON file](https://github.com/DanielBoye/arbitrarian/blob/main/src/utils/quizes.json) containing them. This id is then used to find the correct quiz and all of its questions later on.
 
 ### Other
 
