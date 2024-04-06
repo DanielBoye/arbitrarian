@@ -1,7 +1,5 @@
 # arbitrarian.xyz
 
-*description*
-
 ## Project Description
 
 ### Components
