@@ -1,4 +1,28 @@
-# NextJS + Tableland (JavaScript) Starter
+# arbitrarian.xyz
+
+*description*
+
+## Project Description
+
+### Components
+
+### Routes
+
+### Other
+
+## Project Challenges
+
+### Time
+
+### Other
+
+## Project Links
+   - 🔗 *Github Link for Project*
+   - 🔗 *Youtube Link to Demo presentation*
+   - 🔗 *Pitch Link for Presentation Slides*
+   - 🔗 *Document link for ChainSafe Ideathon*
+
+
 
 > A JavaScript template for @tableland + NextJS + wagmi + Rainbowkit projects
 
