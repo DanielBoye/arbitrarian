@@ -54,72 +54,70 @@ const Dashboard = () => {
 
     return (
         <>
-            <MarketingLayout>
-                <Container className={styles.sectionFeature}>
-                    <h2 className={styles.sectionTitleDashboard}>
-                        <label className="swap" onClick={handleWelcomeClick}>
-                            <input type="checkbox" />
-                            <div className="swap-on">{welcomeMessage}</div>
-                            <div className="swap-off">{welcomeMessage}</div>
-                        </label>
-                    </h2>
-                    <p className={styles.heroLeadDashboard}>
-                        <span>
-                            Here in your Dashboard, you have the power to
-                            manage, deploy and mint ERC20 tokens from a few
-                            clicks and interacting with it.
-                        </span>
-                        <br></br>
-                        <span>
-                            You will can also choose to learn or be challenged
-                            in our quiz section where we focus on security and
-                            smart contract flaws.
-                        </span>
-                    </p>
-                </Container>
-                <Container className={styles.sectionDashboard}>
-                    <div className="flex flex-row justify-center gap-4">
-                        <Link href="/dashboard/quiz">
-                            <div
-                                className={clsx(
-                                    "card w-96 shadow-xl hover:border-primary",
-                                    styles.featuresFeature
-                                )}
-                            >
-                                {" "}
-                                <div className="card-body">
-                                    <h2 className="card-title">Quizes</h2>
-                                    <p>
-                                        Test your knowledge with our
-                                        comprehensive quizzes designed to deepen
-                                        your understanding of blockchain
-                                        technology and smart contract security.
-                                    </p>
-                                </div>
+            <Container className={styles.sectionFeature}>
+                <h2 className={styles.sectionTitleDashboard}>
+                    <label className="swap" onClick={handleWelcomeClick}>
+                        <input type="checkbox" />
+                        <div className="swap-on">{welcomeMessage}</div>
+                        <div className="swap-off">{welcomeMessage}</div>
+                    </label>
+                </h2>
+                <p className={styles.heroLeadDashboard}>
+                    <span>
+                        Here in your Dashboard, you have the power to manage,
+                        deploy and mint ERC20 tokens from a few clicks and
+                        interacting with it.
+                    </span>
+                    <br></br>
+                    <span>
+                        You will can also choose to learn or be challenged in
+                        our quiz section where we focus on security and smart
+                        contract flaws.
+                    </span>
+                </p>
+            </Container>
+            <Container className={styles.sectionDashboard}>
+                <div className="flex flex-row justify-center gap-4">
+                    <Link href="/dashboard/quiz">
+                        <div
+                            className={clsx(
+                                "card w-96 shadow-xl hover:border-primary",
+                                styles.featuresFeature
+                            )}
+                        >
+                            {" "}
+                            <div className="card-body">
+                                <h2 className="card-title">Quizes</h2>
+                                <p>
+                                    Test your knowledge with our comprehensive
+                                    quizzes designed to deepen your
+                                    understanding of blockchain technology and
+                                    smart contract security.
+                                </p>
                             </div>
-                        </Link>
-                        <Link href="/dashboard/token">
-                            <div
-                                className={clsx(
-                                    "card w-96 shadow-xl hover:border-primary",
-                                    styles.featuresFeature
-                                )}
-                            >
-                                <div className="card-body">
-                                    <h2 className="card-title">Token</h2>
-                                    <p>
-                                        Launch your first ERC20 token on the
-                                        Arbitrum Sepolia network effortlessly
-                                        with just a few clicks, and then import
-                                        it directly into your wallet and start
-                                        interacting with it!
-                                    </p>
-                                </div>
+                        </div>
+                    </Link>
+                    <Link href="/dashboard/token">
+                        <div
+                            className={clsx(
+                                "card w-96 shadow-xl hover:border-primary",
+                                styles.featuresFeature
+                            )}
+                        >
+                            <div className="card-body">
+                                <h2 className="card-title">Token</h2>
+                                <p>
+                                    Launch your first ERC20 token on the
+                                    Arbitrum Sepolia network effortlessly with
+                                    just a few clicks, and then import it
+                                    directly into your wallet and start
+                                    interacting with it!
+                                </p>
                             </div>
-                        </Link>
-                    </div>
-                </Container>
-            </MarketingLayout>
+                        </div>
+                    </Link>
+                </div>
+            </Container>
         </>
     );
 };

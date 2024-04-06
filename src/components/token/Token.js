@@ -18,7 +18,6 @@ function Feature({ title, description, className, ...props }) {
 }
 
 const Token = ({ signer }) => {
-
     const [name, setName] = useState("");
     const [symbol, setSymbol] = useState("");
     const [initialSupply, setInitialSupply] = useState("");
@@ -56,25 +55,24 @@ const Token = ({ signer }) => {
     };
     return (
         <>
-            <MarketingLayout>
-                <Container className={styles.sectionFeature}>
-                    <h2 className={styles.sectionTitleDashboard}>
-                        Deploy your first token!
-                    </h2>
-                </Container>
-                <Container className={styles.sectionDashboard}>
-                    <div className="flex flex-row justify-center gap-4">
-                        <div>
-                            <label className="input input-bordered flex items-center gap-8">
-                                <input
-                                    type="text"
-                                    className="grow"
-                                    placeholder="Token Name"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                />
-                            </label>
-                            <label className="input input-bordered flex items-center gap-8">
+            <Container className={styles.sectionFeature}>
+                <h2 className={styles.sectionTitleDashboard}>
+                    Deploy your first token!
+                </h2>
+            </Container>
+            <Container className={styles.sectionDashboard}>
+                <div className="flex flex-row justify-center gap-4">
+                    <div>
+                        <label className="input input-bordered flex items-center gap-8">
+                            <input
+                                type="text"
+                                className="grow"
+                                placeholder="Token Name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />
+                        </label>
+                        <label className="input input-bordered flex items-center gap-8">
                             <input
                                 type="text"
                                 maxLength="3"
@@ -90,77 +88,96 @@ const Token = ({ signer }) => {
                             />
                         </label>
 
-                            <label className="input input-bordered flex items-center gap-8">
-                                <input
-                                    type="text"
-                                    className="grow"
-                                    placeholder="Supply"
-                                    value={initialSupply}
-                                    onChange={(e) =>
-                                        setInitialSupply(e.target.value)
-                                    }
-                                />
-                            </label>
-                            <button
-                                className="btn"
-                                onClick={deployToken}
-                                disabled={deploying}
-                            >
-                                {deploying ? "Deploying..." : "Deploy Token"}
-                            </button>
-                            {deployed && showAddress && contractAddress? (
-                                contractAddress ? (
-                                    <div className="toast toast-end absolute top-50 right-50 pt-5 pr-5">
-                                        <div className="alert alert-success">
-                                            <span>
-                                                Success!
-                                            </span>
-                                        </div>
-                                    </div>
-                                ) : (
-                                    <div className="toast toast-end">
-                                        <div className="alert alert-error">
-                                            <span>Contract deployment error</span>
-                                        </div>
-                                    </div>
-                                )
-                            ) : null}
-
-
-                        </div>
-                        <div className="mockup-code bg-secondary text-primary">
-                            <pre>
-                                <code className="language-solidity">
-                                    {data.contractCode}
-                                </code>
-                            </pre>
-                        </div>
-                    </div>
-                </Container>
-                <Container className={styles.heroLeadWallet}>
-                    {deployed ? (
-                        <p>Contract address: <span className={styles.contractAddress}>{contractAddress}</span></p>
-                    ) : (
-                        null
-                    )}
-                </Container>
-
-                <Container className={styles.sectionFeature}>
-                    <h2 className={styles.sectionTitleDashboard}>ERC20</h2>
-                        <div className={styles.featuresGrid}>
-                            <Feature
-
-                                description={
-                                            <>
-                                                <span>The ERC20 standard defines a set of rules that apply to all tokens operating on the Ethereum blockchain. When you deploy an ERC20 token, you are creating a digital asset that can be traded, spent, or given to others. ERC20 tokens maintain a consistent record of who owns how many tokens at any given time and ensure secure transactions within the Ethereum network.</span>
-                                                <span>Deploying an ERC20 token through this dashboard allows you to specify a unique name, symbol, and initial supply for your token. The initial supply is minted to your address upon creation, after which you can distribute it according to your project's needs. This token can then be integrated into a wider ecosystem of wallets, exchanges, and other smart contracts, leveraging the interoperability that the ERC20 standard provides.</span>
-                                            </>
-                                        }
-                                        title="Tokens"
+                        <label className="input input-bordered flex items-center gap-8">
+                            <input
+                                type="text"
+                                className="grow"
+                                placeholder="Supply"
+                                value={initialSupply}
+                                onChange={(e) =>
+                                    setInitialSupply(e.target.value)
+                                }
                             />
-                        </div>
-                </Container>
-            </MarketingLayout>
+                        </label>
+                        <button
+                            className="btn"
+                            onClick={deployToken}
+                            disabled={deploying}
+                        >
+                            {deploying ? "Deploying..." : "Deploy Token"}
+                        </button>
+                        {deployed && showAddress && contractAddress ? (
+                            contractAddress ? (
+                                <div className="toast toast-end absolute top-50 right-50 pt-5 pr-5">
+                                    <div className="alert alert-success">
+                                        <span>Success!</span>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="toast toast-end">
+                                    <div className="alert alert-error">
+                                        <span>Contract deployment error</span>
+                                    </div>
+                                </div>
+                            )
+                        ) : null}
+                    </div>
+                    <div className="mockup-code bg-secondary text-primary">
+                        <pre>
+                            <code className="language-solidity">
+                                {data.contractCode}
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </Container>
+            <Container className={styles.heroLeadWallet}>
+                {deployed ? (
+                    <p>
+                        Contract address:{" "}
+                        <span className={styles.contractAddress}>
+                            {contractAddress}
+                        </span>
+                    </p>
+                ) : null}
+            </Container>
+
+            <Container className={styles.sectionFeature}>
+                <h2 className={styles.sectionTitleDashboard}>ERC20</h2>
+                <div className={styles.featuresGrid}>
+                    <Feature
+                        description={
+                            <>
+                                <span>
+                                    The ERC20 standard defines a set of rules
+                                    that apply to all tokens operating on the
+                                    Ethereum blockchain. When you deploy an
+                                    ERC20 token, you are creating a digital
+                                    asset that can be traded, spent, or given to
+                                    others. ERC20 tokens maintain a consistent
+                                    record of who owns how many tokens at any
+                                    given time and ensure secure transactions
+                                    within the Ethereum network.
+                                </span>
+                                <span>
+                                    Deploying an ERC20 token through this
+                                    dashboard allows you to specify a unique
+                                    name, symbol, and initial supply for your
+                                    token. The initial supply is minted to your
+                                    address upon creation, after which you can
+                                    distribute it according to your project's
+                                    needs. This token can then be integrated
+                                    into a wider ecosystem of wallets,
+                                    exchanges, and other smart contracts,
+                                    leveraging the interoperability that the
+                                    ERC20 standard provides.
+                                </span>
+                            </>
+                        }
+                        title="Tokens"
+                    />
+                </div>
+            </Container>
         </>
     );
 };
