@@ -1,124 +1,245 @@
 {
     "quizes": [
         {
-            "quiz_title": "Math Quiz",
+            "quiz_title": "Solidity Basics",
             "questions": [
                 {
-                    "question": "What is 2 + 2?",
-                    "options": ["3", "4", "5", "6"],
+                    "question": "What keyword is used to define a constructor in a Solidity contract?",
+                    "options": ["function", "constructor", "class", "create"],
                     "correct": 1
                 },
                 {
-                    "question": "What is 5 * 3?",
-                    "options": ["10", "15", "20", "25"],
-                    "correct": 1
-                },
-                {
-                    "question": "What is the square root of 64?",
-                    "options": ["6", "8", "10", "12"],
-                    "correct": 1
-                }
-            ]
-        },
-        {
-            "quiz_title": "Science Quiz",
-            "questions": [
-                {
-                    "question": "What is the chemical symbol for water?",
-                    "options": ["H2O", "CO2", "NaCl", "O2"],
-                    "correct": 0
-                },
-                {
-                    "question": "What is the force that pulls objects towards the center of the Earth?",
-                    "options": ["Gravity", "Friction", "Magnetism", "Tension"],
-                    "correct": 0
-                },
-                {
-                    "question": "What is the powerhouse of the cell?",
-                    "options": [
-                        "Mitochondria",
-                        "Nucleus",
-                        "Ribosome",
-                        "Endoplasmic reticulum"
-                    ],
-                    "correct": 0
-                }
-            ]
-        },
-        {
-            "quiz_title": "History Quiz",
-            "questions": [
-                {
-                    "question": "Who was the first President of the United States?",
-                    "options": [
-                        "George Washington",
-                        "Thomas Jefferson",
-                        "Abraham Lincoln",
-                        "John Adams"
-                    ],
-                    "correct": 0
-                },
-                {
-                    "question": "In what year did World War I begin?",
-                    "options": ["1905", "1914", "1920", "1939"],
-                    "correct": 1
-                },
-                {
-                    "question": "Who was the leader of the Soviet Union during the Cuban Missile Crisis?",
-                    "options": [
-                        "Vladimir Putin",
-                        "Joseph Stalin",
-                        "Nikita Khrushchev",
-                        "Mikhail Gorbachev"
-                    ],
+                    "question": "Which of the following is used to handle exceptions in Solidity?",
+                    "options": ["catch", "throw", "revert", "exception"],
                     "correct": 2
-                }
-            ]
-        },
-        {
-            "quiz_title": "Crypto Quiz",
-            "questions": [
-                {
-                    "question": "What is the symbol for Ethereum?",
-                    "options": ["ETH", "BTC", "ETC", "XRP"],
-                    "correct": 0
                 },
                 {
-                    "question": "What consensus algorithm does Ethereum 2.0 use?",
+                    "question": "Solidity is statically typed. What does this mean?",
                     "options": [
-                        "Proof of Work",
-                        "Proof of Stake",
-                        "Proof of Authority",
-                        "Proof of History"
-                    ],
-                    "correct": 1
-                },
-                {
-                    "question": "Who is the co-founder of Ethereum?",
-                    "options": [
-                        "Satoshi Nakamoto",
-                        "Charles Hoskinson",
-                        "Vitalik Buterin",
-                        "Dan Larimer"
+                        "Variables types can change over time",
+                        "Variable types are checked at runtime",
+                        "Variable types are set at compile time and cannot change",
+                        "All variables are of type string"
                     ],
                     "correct": 2
                 },
                 {
-                    "question": "What is a smart contract?",
+                    "question": "What is the visibility specifier that makes functions and state variables accessible from other contracts?",
+                    "options": ["external", "public", "internal", "private"],
+                    "correct": 1
+                }
+            ]
+        },
+        {
+            "quiz_title": "Advanced Solidity",
+            "questions": [
+                {
+                    "question": "What is a modifier in Solidity?",
                     "options": [
-                        "A legal document",
+                        "A function that can modify state variables",
+                        "A contract that can be modified after deployment",
+                        "A construct used to change the behavior of functions in a declarative way",
+                        "A special variable type that can be altered"
+                    ],
+                    "correct": 2
+                },
+                {
+                    "question": "How can you prevent re-entrancy attacks in your contract?",
+                    "options": [
+                        "Using the external visibility specifier",
+                        "By making all functions private",
+                        "Implementing checks-effects-interactions pattern",
+                        "Declaring all state variables as constant"
+                    ],
+                    "correct": 2
+                },
+                {
+                    "question": "What is gas in the context of Ethereum?",
+                    "options": [
+                        "A fee for conducting transactions and executing contracts",
                         "A type of cryptocurrency",
-                        "A self-executing contract with the terms directly written into code",
-                        "A digital form of traditional contract"
+                        "The power required to run the Ethereum network",
+                        "A measure of how quickly transactions are processed"
+                    ],
+                    "correct": 0
+                },
+                {
+                    "question": "Which of the following is a feature of the Ethereum Virtual Machine (EVM)?",
+                    "options": ["It is Turing-complete", "It can only execute simple transactions", "It runs on a single centralized server", "It supports only one programming language"],
+                    "correct": 0
+                }
+            ]
+        },
+        {
+            "quiz_title": "Solidity Security",
+            "questions": [
+                {
+                    "question": "What is the purpose of the 'require' function in Solidity?",
+                    "options": [
+                        "To generate random numbers",
+                        "To create new contracts",
+                        "To validate conditions and revert the transaction if the condition is not met",
+                        "To encrypt sensitive data"
                     ],
                     "correct": 2
                 },
                 {
-                    "question": "Which token standard is used for creating NFTs on Ethereum?",
-                    "options": ["ERC-20", "ERC-721", "ERC-1155", "ERC-777"],
+                    "question": "Which practice helps in protecting against overflow and underflow attacks?",
+                    "options": ["Using fixed-size loops", "Keeping all functions private", "Using the SafeMath library", "Avoiding external calls"],
+                    "correct": 2
+                },
+                {
+                    "question": "What is the main purpose of the 'immutable' keyword in Solidity?",
+                    "options": [
+                        "To declare variables that cannot be changed after their value is set for the first time",
+                        "To ensure that functions do not modify the state",
+                        "To encrypt state variables",
+                        "To create variables that can be modified externally"
+                    ],
+                    "correct": 0
+                },
+                {
+                    "question": "How can contract upgrades be managed in Solidity?",
+                    "options": [
+                        "By redeploying the contract with new code",
+                        "Using the 'update' keyword",
+                        "Through delegatecall to a separate contract that holds the new logic",
+                        "Solidity contracts cannot be upgraded"
+                    ],
+                    "correct": 2
+                }
+            ]
+        },
+        {
+            "quiz_title": "Deployment and Gas Optimization",
+            "questions": [
+                {
+                    "question": "What is a proxy contract in the context of Solidity?",
+                    "options": [
+                        "A contract that forwards calls to other contracts",
+                        "A contract that estimates gas costs",
+                        "A contract that holds all the ether for transactions",
+                        "A contract that creates gas tokens"
+                    ],
+                    "correct": 0
+                },
+                {
+                    "question": "Which of these is a way to optimize gas consumption?",
+                    "options": [
+                        "Using more storage variables",
+                        "Minimizing state variable writes",
+                        "Creating large arrays in memory",
+                        "Using loops extensively"
+                    ],
                     "correct": 1
+                },
+                {
+                    "question": "When deploying a contract, what determines the amount of gas required?",
+                    "options": [
+                        "The contract's complexity and the size of the compiled code",
+                        "The time of day the contract is deployed",
+                        "The price of ether at the time of deployment",
+                        "The number of functions in the contract"
+                    ],
+                    "correct": 0
+                },
+                {
+                    "question": "What tool is commonly used for compiling Solidity smart contracts?",
+                    "options": ["Truffle", "Ganache", "Metamask", "Etherscan"],
+                    "correct": 0
+                }
+            ]
+        }, 
+        {
+            "quiz_title": "Solidity Smart Contract Security",
+            "questions": [
+                {
+                    "question": "Which of the following is a common security risk in Solidity?",
+                    "options": [
+                        "Re-entrancy attacks",
+                        "Too many comments in code",
+                        "Using the latest Solidity version",
+                        "Declaring variables public"
+                    ],
+                    "correct": 0
+                },
+                {
+                    "question": "How does the 'keccak256' hashing function contribute to security in Solidity?",
+                    "options": [
+                        "It encrypts sensitive contract information",
+                        "It creates unique identifiers for transactions",
+                        "It generates random numbers in a predictable manner",
+                        "It securely verifies and compares user inputs or contract states"
+                    ],
+                    "correct": 3
+                },
+                {
+                    "question": "What is the primary function of the OpenZeppelin Contracts library?",
+                    "options": [
+                        "To provide standard, secure implementations of common contract functionalities",
+                        "To optimize gas costs for transactions and contract deployments",
+                        "To serve as a development framework for deploying contracts",
+                        "To facilitate cross-chain transactions"
+                    ],
+                    "correct": 0
+                },
+                {
+                    "question": "Which modifier should be used to prevent functions from being called by unauthorized entities?",
+                    "options": [
+                        "immutable",
+                        "external",
+                        "onlyOwner",
+                        "view"
+                    ],
+                    "correct": 2
+                }
+            ]
+        },
+        {
+            "quiz_title": "DeFi Essentials",
+            "questions": [
+                {
+                    "question": "What does 'DeFi' stand for?",
+                    "options": [
+                        "Decentralized Finance",
+                        "Distributed Finance",
+                        "Digital Finance",
+                        "Derivative Finance"
+                    ],
+                    "correct": 0
+                },
+                {
+                    "question": "Which of these is a fundamental building block of DeFi?",
+                    "options": [
+                        "Smart contracts",
+                        "Centralized exchanges",
+                        "Bank accounts",
+                        "Government regulations"
+                    ],
+                    "correct": 0
+                },
+                {
+                    "question": "What mechanism do most DeFi platforms use to achieve consensus?",
+                    "options": [
+                        "Proof of Work (PoW)",
+                        "Proof of Stake (PoS)",
+                        "Proof of Authority (PoA)",
+                        "Proof of History (PoH)"
+                    ],
+                    "correct": 1
+                },
+                {
+                    "question": "Which of the following best describes 'yield farming'?",
+                    "options": [
+                        "A strategy for maximizing returns by moving assets between different DeFi protocols",
+                        "A process for generating cryptocurrencies by validating transactions",
+                        "The practice of staking or locking up cryptocurrencies in return for rewards",
+                        "An agricultural simulation game on the blockchain"
+                    ],
+                    "correct": 0
                 }
             ]
         }
+        
     ]
 }
