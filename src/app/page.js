@@ -9,7 +9,6 @@ import styles from "./index.module.css";
 import { ComponentProps, useCallback } from "react"; // Import useCallback
 
 
-
 function Feature({ title, description, className, ...props }) {
   return (
     <div className={clsx(className, styles.featuresFeature)} {...props}>
