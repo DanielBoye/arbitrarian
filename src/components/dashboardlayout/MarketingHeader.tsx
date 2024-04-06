@@ -8,24 +8,19 @@ import { Button } from "@/components/icons/Button";
 import { Container } from "@/components/container/Container";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import styles from "./MarketingHeader.module.css";
-import { ComponentProps, useCallback } from "react"; // Import useCallback
+import { ComponentProps, useCallback } from "react";
+import { Logo } from "../icons/Logo";
 
 export function MarketingHeader({
   className,
   ...props
 }: ComponentProps<"header">) {
 
-  // Create a function to handle redirection
-  const redirectToGoogle = useCallback(() => {
-    // Redirect to Google
-    window.location.href = '/dashboard';
-  }, []);
-
   return (
     <header className={clsx(className, styles.header)} {...props}>
       <Container className={styles.container}>
-        <Link href="/dashboard">
-          
+        <Link href="/">
+          <Logo/>
         </Link>
         <ConnectButton/>
       </Container>

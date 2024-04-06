@@ -15,21 +15,48 @@ const welcomeMessages = [
     "Willkommen!",
     "Benvenuto!",
     "Bem-vindo!",
-];
-
-const Dashboard = () => {
+    "Добро пожаловать!",
+    "欢迎！",
+    "ようこそ！",
+    "환영합니다!",
+    "Vítejte!",
+    "Velkommen!",
+    "Welkom!",
+    "Välkommen!",
+    "Tervetuloa!",
+    "स्वागत हे!",
+    "Καλώς ήρθατε!",
+    "Benvenuti!",
+    "Hoşgeldiniz!",
+    "ברוכים הבאים!",
+    "Bine ați venit!",
+    "Добредојдовте!",
+    "Velkomin!",
+    "Ласкаво просимо!",
+    "أهلاً وسهلاً"
+  ];
+  
+  
+  const Dashboard = () => {
     const [welcomeMessage, setWelcomeMessage] = useState("Welcome!");
+<<<<<<< HEAD
     const signer = useSigner();
     const account = useAccount();
 
+=======
+  
+>>>>>>> f4da5990d78a05feeb039acdefbd8c5041d83472
     const handleWelcomeClick = () => {
-        const randomMessage =
-            welcomeMessages[Math.floor(Math.random() * welcomeMessages.length)];
-        setWelcomeMessage(randomMessage);
+      const filteredMessages = welcomeMessages.filter(message => message !== welcomeMessage);
+      
+      const newMessage = filteredMessages[Math.floor(Math.random() * filteredMessages.length)];
+      
+      setWelcomeMessage(newMessage);
     };
 
     return (
         <>
+<<<<<<< HEAD
             {/* <MarketingLayout> */}
             <Container className={styles.sectionFeature}>
                 <h2 className={styles.sectionTitleDashboard}>
@@ -77,6 +104,63 @@ const Dashboard = () => {
                                     Deploy your own ERC20 token on the Arbitrum
                                     network!
                                 </p>
+=======
+            <MarketingLayout>
+                <Container className={styles.sectionFeature}>
+                    <h2 className={styles.sectionTitleDashboard}>
+                        <label className="swap" onClick={handleWelcomeClick}>
+                            <input type="checkbox" />
+                            <div className="swap-on">{welcomeMessage}</div>
+                            <div className="swap-off">{welcomeMessage}</div>
+                        </label>
+                    </h2>
+                    <p className={styles.heroLeadDashboard}>
+                        <span>Here in your Dashboard, you have the power to manage, deploy and mint
+                        ERC20 tokens from a few clicks and interacting with it.</span>
+                        <br></br>
+                        <span>You will can also choose to learn or be challenged in our quiz section
+                        where we focus on security and smart contract flaws.</span>
+                    </p>
+                </Container>
+                <Container className={styles.sectionDashboard}>
+                    <div className="flex flex-row justify-center gap-4">
+                        <Link href="/dashboard/quiz">
+                            <div
+                                className={clsx(
+                                    "card w-96 shadow-xl hover:border-primary",
+                                    styles.featuresFeature
+                                )}
+                            >
+                                {" "}
+                                <div className="card-body">
+                                    <h2 className="card-title">Quizes</h2>
+                                    <p>
+                                        Test your knowledge with our
+                                        comprehensive quizzes designed to deepen
+                                        your understanding of blockchain
+                                        technology and smart contract security.
+                                    </p>
+                                </div>
+                            </div>
+                        </Link>
+                        <Link href="/dashboard/token">
+                            <div
+                                className={clsx(
+                                    "card w-96 shadow-xl hover:border-primary",
+                                    styles.featuresFeature
+                                )}
+                            >
+                                <div className="card-body">
+                                    <h2 className="card-title">Token</h2>
+                                    <p>
+                                        Launch your first ERC20 token on the
+                                        Arbitrum Sepolia network effortlessly
+                                        with just a few clicks, and then import
+                                        it directly into your wallet and start
+                                        interacting with it!
+                                    </p>
+                                </div>
+>>>>>>> f4da5990d78a05feeb039acdefbd8c5041d83472
                             </div>
                         </div>
                     </Link>
