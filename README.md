@@ -1,8 +1,16 @@
 # arbitrarian.xyz
 
+Learn about smart contract security and deploy ERC20 tokens on the Arbitrum Sepolia Network
+
 ## Project Description
 
 ### Components
+
+#### Dashboard
+
+The `Dashboard.js` component serves as the primary gateway for users, presenting the core functionalities of the application through interactive cards. Initially, it greets users with a randomly selected welcome message from a curated list, aiming to create a welcoming atmosphere for a global audience. This interactive element is made possible by utilizing React's `useState` hook to maintain the state of the `welcomeMessage`, which users can change with a simple click, highlighting the component's dynamic and user-centric design.
+
+Central to the `Dashboard.js` are two key features, each represented by a card: one leading to the quizzes section and the other to the token deployment function. The quizzes card invites users to test and expand their knowledge on blockchain and smart contract security, while the token card offers a simplified process for creating `ERC20` tokens on the Arbitrum Sepolia network. This bifurcation is achieved through the thoughtful use of Next.js's Link component, ensuring seamless navigation within the application.
 
 #### Token
 
@@ -31,6 +39,14 @@ The `Quiz` component holds all of the questions and renders them in order, one a
 The `QuizQuestion` component only has two sateful variables, `selectedOption` and `correct`, both whom are pretty self explanatory. The first thing we do is create a list of `options` for the question, based of the question given as a prop to our component. Here we used daisyui's radio component. We wrapped the `options` in a card with a button. The button is for submission and is the callback function mentioned earlier in the [Quiz](#quiz) component.
 
 ### Routes
+
+#### /dashboard
+
+The `/dashboard` route in the application serves as a central hub for users to access various functionalities related to ERC20 tokens and quizzes on blockchain technology and smart contract security. This route is rendered using the `Dashboard.js` component, which provides a welcoming user interface and easy navigation to the main features of the application: deploying tokens and taking quizzes.
+
+Upon entering the dashboard, users are greeted with a welcome message that can be changed by clicking on it, offering a personalized touch. The message is selected randomly from a predefined list of welcome messages in different languages, showcasing the international appeal and user-friendly nature of the application. Below the welcome message, a brief description introduces the core functionalities available in the dashboard: managing, deploying, and minting ERC20 tokens with ease, alongside an invitation to enhance their understanding of blockchain security through quizzes.
+
+The UI of the `Dashboard` component is divided into sections, each represented by a card that leads to either the token deployment feature or the quiz section. The first card, labeled "Quizzes," directs users to a series of quizzes designed to test and improve their knowledge of blockchain technology and smart contract security. The second card, titled "Token," offers users a straightforward pathway to deploy their own ERC20 tokens on the Arbitrum Sepolia network. This interactive and educational approach, combined with the straightforward navigation provided by `Link` components from Next.js, emphasizes the dashboard's role as an essential tool for users to engage with the application's features efficiently.
 
 #### /quiz
 The `page.js` file is where the main content for the route is stores. In here we import the [`QuizGrid`](#quizgrid) component.
