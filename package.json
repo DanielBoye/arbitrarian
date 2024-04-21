@@ -1,7 +1,7 @@
 {
-  "name": "next-js-tableland-template",
+  "name": "Arbitrarian",
   "version": "0.0.0",
-  "description": "A JavaScript template for @tableland + NextJS + wagmi + RainbowKit projects",
+  "description": "Learn mart contract security and development",
   "scripts": {
     "dev": "next dev",
     "build": "npm install && next build",
