@@ -7,6 +7,7 @@ import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
 import { setCookie } from "../actions";
+
 export default function DashboardLayout({ children }) {
     const { isConnected, address } = useAccount();
     const { openConnectModal } = useConnectModal();
@@ -27,7 +28,7 @@ export default function DashboardLayout({ children }) {
         const table = await readTable(signer, "");
 
         if (table.length == 0) {
-            insertUser(signer, "", address)
+            insertUser(signer, "", address);
         }
 
         for (let i = 0; i < table.length; i++) {
