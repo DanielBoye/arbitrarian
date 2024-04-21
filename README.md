@@ -83,6 +83,5 @@ From the user's perspective, the `/dashboard/token` page provides an interface t
 
 ## Project Links
    - [🔗 Github Link for Project](https://github.com/DanielBoye/arbitrarian)
-   - [🔗Youtube Link to Demo presentation](https://youtu.be/tfiRCplKwd8)
    - [🔗 Pitch Link for Arbitrarian](https://www.canva.com/design/DAGBleXFjxM/HwUBct9xJaS_8-DZdLKKSQ/edit?utm_content=DAGBleXFjxM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) 
    - [🔗 Website Link](https://arbitrarian.xyz) 
