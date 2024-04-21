@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 
 import clsx from "clsx";
 import Link from "next/link";
@@ -8,14 +7,12 @@ import { Button } from "@/components/icons/Button";
 import { Container } from "@/components/container/Container";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import styles from "./MarketingHeader.module.css";
-import { ComponentProps, useCallback } from "react";
 import { Logo } from "../icons/Logo";
 
 export function MarketingHeader({
   className,
   ...props
-}: ComponentProps<"header">) {
-
+}) {
   return (
     <header className={clsx(className, styles.header)} {...props}>
       <Container className={styles.container}>
